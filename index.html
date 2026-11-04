@@ -150,23 +150,24 @@
       /* Faixa parada e inteira no celular */
       .faixa div { display: none; }
       .faixa-curta { display: block; text-align: center; padding: 9px 12px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
-      .hero__inner { grid-template-columns: 1fr; min-height: 0; padding: 22px 0 52px; gap: 0; }
+      .hero__inner { grid-template-columns: 1fr; min-height: 0; padding: 14px 0 52px; gap: 0; }
       /* Mosaico: 6 fotos inteiras, sem corte */
       .mosaico { order: -1; height: auto; margin: 0; -webkit-mask: none; mask: none; }
       .mosaico__grade { position: static; transform: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 6px 4px 14px; }
       .mosaico__col { gap: 10px; margin: 0 !important; }
       .mosaico__col:nth-child(1) { transform: rotate(-2.5deg); }
-      .mosaico__col:nth-child(2) { transform: translateY(12px); }
+      .mosaico__col:nth-child(2) { transform: translateY(6px); }
       .mosaico__col:nth-child(3) { transform: rotate(2.5deg); }
-      .mosaico figure, .mosaico figure.larga { width: 100%; aspect-ratio: 1; border-radius: 12px; }
-      .mosaico figure:nth-child(3) { display: none; }
+      .mosaico figure, .mosaico figure.larga { width: 100%; aspect-ratio: 4 / 3; border-radius: 12px; }
+      .mosaico figure:nth-child(n+2) { display: none; }
       .aviao { display: none; }
-      .hero__copy { margin-top: 18px; text-align: center; }
-      .marca img { width: 84px; height: 84px; margin: 0 auto; }
+      .hero__copy { margin-top: 10px; text-align: center; }
+      .marca img { width: 56px; height: 56px; margin: 0 auto; }
       .selo { margin-top: 2px; }
-      h1 { margin-top: 14px; font-size: clamp(28px, 8vw, 34px); }
-      .hero__copy p { font-size: 16px; margin-inline: auto; }
+      h1 { margin-top: 8px; font-size: clamp(26px, 7.4vw, 33px); }
+      .hero__copy p { font-size: 15.5px; line-height: 1.5; margin: 10px auto 0; }
       .btn { width: 100%; padding: 0 18px; font-size: 17px; white-space: nowrap; }
+      .hero .btn--primary { margin-top: 18px; }
       .achados ul { justify-content: center; }
       .achados li { font-size: 15px; }
       .prova { padding: 60px 0; }
