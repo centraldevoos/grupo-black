@@ -116,7 +116,7 @@
     .card { border-radius: 20px; background: var(--card); border: 1px solid var(--linha); overflow: hidden; display: flex; flex-direction: column; }
     .card__video { position: relative; flex: none; aspect-ratio: 4 / 5; background: #1b170c; }
     .card__video img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
-    .card__video button { position: absolute; inset: 0; border: 0; cursor: pointer; display: grid; place-items: center; background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, .55)); }
+    .card__video button { position: absolute; inset: 0; border: 0; cursor: pointer; display: grid; place-items: end start; padding: 16px; background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, .55)); }
     .card__video vturb-smartplayer { display: block; width: 100%; height: 100%; }
     .play { width: 66px; height: 66px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 200, 61, .95); box-shadow: 0 0 34px -4px rgba(255, 190, 40, .8); transition: transform .2s; }
     .card__video button:hover .play { transform: scale(1.08); }
@@ -144,33 +144,43 @@
 
     a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
+    .faixa-curta { display: none; }
     @media (max-width: 860px) {
       body { font-size: 16px; }
-      .hero__inner { grid-template-columns: 1fr; min-height: 0; padding: 0 0 52px; gap: 0; }
-      .mosaico { order: -1; height: 330px; margin: 0 -20px; -webkit-mask: linear-gradient(#000 58%, transparent); mask: linear-gradient(#000 58%, transparent); }
-      .mosaico__grade { gap: 10px; transform: translate(-50%, -54%) rotate(-12deg); }
-      .mosaico__col { gap: 10px; }
-      .mosaico__col:nth-child(2) { margin-top: -50px; }
-      .mosaico__col:nth-child(3) { margin-top: 40px; }
-      .mosaico figure { width: 118px; border-radius: 12px; }
-      .aviao { width: 46px; right: 6%; top: 10%; }
-      .hero__copy { margin-top: -54px; position: relative; text-align: center; }
-      .marca img { width: 88px; height: 88px; margin: 0 auto; }
-      .selo { margin-top: 4px; }
-      h1 { margin-top: 14px; }
-      .hero__copy p { font-size: 16.5px; margin-inline: auto; }
-      .btn { width: 100%; }
+      /* Faixa parada e inteira no celular */
+      .faixa div { display: none; }
+      .faixa-curta { display: block; text-align: center; padding: 9px 12px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+      .hero__inner { grid-template-columns: 1fr; min-height: 0; padding: 22px 0 52px; gap: 0; }
+      /* Mosaico: 6 fotos inteiras, sem corte */
+      .mosaico { order: -1; height: auto; margin: 0; -webkit-mask: none; mask: none; }
+      .mosaico__grade { position: static; transform: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 6px 4px 14px; }
+      .mosaico__col { gap: 10px; margin: 0 !important; }
+      .mosaico__col:nth-child(1) { transform: rotate(-2.5deg); }
+      .mosaico__col:nth-child(2) { transform: translateY(12px); }
+      .mosaico__col:nth-child(3) { transform: rotate(2.5deg); }
+      .mosaico figure, .mosaico figure.larga { width: 100%; aspect-ratio: 1; border-radius: 12px; }
+      .mosaico figure:nth-child(3) { display: none; }
+      .aviao { display: none; }
+      .hero__copy { margin-top: 18px; text-align: center; }
+      .marca img { width: 84px; height: 84px; margin: 0 auto; }
+      .selo { margin-top: 2px; }
+      h1 { margin-top: 14px; font-size: clamp(28px, 8vw, 34px); }
+      .hero__copy p { font-size: 16px; margin-inline: auto; }
+      .btn { width: 100%; padding: 0 18px; font-size: 17px; white-space: nowrap; }
       .achados ul { justify-content: center; }
-      .prova { padding: 64px 0; }
-      .cards { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
-      .card { display: grid; grid-template-columns: 128px 1fr; }
-      .card__video { aspect-ratio: auto; min-height: 100%; }
-      .card__txt { padding: 16px 16px 18px; gap: 8px; }
-      .card__txt q { font-size: 15px; }
-      .tag { font-size: 12.5px; }
-      .play { width: 48px; height: 48px; }
-      .play svg { width: 18px; height: 18px; }
-      .faq { padding: 64px 0 72px; }
+      .achados li { font-size: 15px; }
+      .prova { padding: 60px 0; }
+      /* Depoimentos empilhados: foto em cima, texto embaixo */
+      .cards { grid-template-columns: 1fr; gap: 18px; margin-top: 30px; }
+      .card__video { aspect-ratio: 1; }
+      .card__video img { object-position: center 18%; }
+      .card__txt { padding: 16px 18px 20px; gap: 10px; }
+      .card__txt q { font-size: 15.5px; }
+      .tag { font-size: 13px; }
+      .play { width: 56px; height: 56px; }
+      .play svg { width: 20px; height: 20px; }
+      .faq { padding: 60px 0 72px; }
+      summary { font-size: 15.5px; padding: 16px 18px; }
     }
     @media (prefers-reduced-motion: reduce) { .faixa div, .btn--pulse { animation: none; } }
   </style>
@@ -182,7 +192,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Fim Google Tag Manager (noscript) -->
 
-  <div class="faixa" aria-hidden="true"><div>
+  <div class="faixa"><p class="faixa-curta">✦ Super Black Friday no grupo gratuito ✦</p><div aria-hidden="true">
     <span>Aproveite a Super Black Friday para viajar pagando menos</span><span>Promoções de passagem todos os dias no grupo gratuito</span><span>Aproveite a Super Black Friday para viajar pagando menos</span><span>Promoções de passagem todos os dias no grupo gratuito</span>
     <span>Aproveite a Super Black Friday para viajar pagando menos</span><span>Promoções de passagem todos os dias no grupo gratuito</span><span>Aproveite a Super Black Friday para viajar pagando menos</span><span>Promoções de passagem todos os dias no grupo gratuito</span>
   </div></div>
