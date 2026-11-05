@@ -79,7 +79,7 @@
     .hero { position: relative; overflow: hidden; isolation: isolate;
       background: radial-gradient(55% 60% at 78% 45%, rgba(255, 186, 40, .16), transparent 70%), radial-gradient(40% 50% at 10% 80%, rgba(255, 186, 40, .07), transparent 70%), var(--fundo); }
     .hero__inner { min-height: 640px; display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 40px; padding: 56px 0 64px; }
-    .marca img { width: 108px; height: 108px; object-fit: contain; margin-left: -14px; }
+    .marca img { width: 70px; height: auto; }
     .selo { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(255, 200, 61, .55); color: var(--gold); font-weight: 800; font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; }
     .selo::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); }
     h1 { font-family: Sora, Manrope, sans-serif; font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.1; letter-spacing: -.03em; margin-top: 18px; text-wrap: balance; }
@@ -162,9 +162,9 @@
       .mosaico figure:nth-child(n+2) { display: none; }
       .aviao { display: none; }
       .hero__copy { margin-top: 10px; text-align: center; }
-      .marca img { width: 56px; height: 56px; margin: 0 auto; }
+      .marca img { width: 50px; margin: 0 auto; }
       .selo { margin-top: 2px; }
-      h1 { margin-top: 8px; font-size: clamp(26px, 7.4vw, 33px); }
+      h1 { margin-top: 16px; font-size: clamp(26px, 7.4vw, 33px); }
       .hero__copy p { font-size: 15.5px; line-height: 1.5; margin: 10px auto 0; }
       .btn { width: 100%; padding: 0 18px; font-size: 17px; white-space: nowrap; }
       .hero .btn--primary { margin-top: 18px; }
@@ -202,7 +202,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="shell hero__inner">
         <div class="hero__copy">
-          <a class="marca" href="#top" aria-label="Central de Voos"><img src="logo.png" alt="Central de Voos"></a>
+          <a class="marca" href="#top" aria-label="Central de Voos"><img src="logo-cdv.png" alt="Central de Voos" width="240" height="275"></a>
           <h1 id="hero-title">Receba <span>Promoções Secretas</span> de Passagens com até 87% de desconto!</h1>
           <p>Nossa Inteligência Artificial busca oportunidades em passagens aéreas e envia no grupo do WhatsApp.</p>
           <a class="btn btn--primary btn--pulse" href="https://tintim.link/whatsapp/5e1595d4-a3db-4084-848f-87f553f347ab/4118811f-e2d4-402c-812c-676f1f570831" data-free-group-cta>Acessar grupo grátis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
